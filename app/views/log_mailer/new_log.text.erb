@@ -1,0 +1,12 @@
+New Operation happened
+===============================================
+
+Operation Details:
+--------------------------
+
+operator: <%= @opts[:operator].email %>
+operand: <%= @opts[:operand].email %>
+Operation: <%= @opts[:operation] %>
+
+Message:
+This is to notify that user <%= @opts[:operand].email %> has been <%= @opts[:operation] %> by <%= @opts[:operator].email %>
