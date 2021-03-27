@@ -15,6 +15,10 @@ services:
     command: bash -c "bundle install; bundle exec rails s -p 3189 -b 0.0.0.0"
     volumes:
       - .:/app
+    environment:
+      - PUSHER_INSTANCE_ID=${PUSHER_INSTANCE_ID}
+      - PUSHER_SECRET_KEY=${PUSHER_SECRET_KEY}
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
     ports:
       - "3189:3189"
     depends_on:
