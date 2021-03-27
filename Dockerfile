@@ -5,9 +5,11 @@ RUN apk update \
     && apk add --update --no-cache \
     build-base curl-dev git \
     yaml-dev zlib-dev nodejs yarn mariadb-dev \
+    apk add alpine-sdk git ruby-full ruby-dev \
     tzdata bash
 
 RUN gem install bundler -v 2.1.4
+RUN gem install --no-ri --no-rdoc rubocop 
 
 ENV app /app
 RUN mkdir $app

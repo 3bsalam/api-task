@@ -6,6 +6,22 @@ This is our Lekker Rails-API :rocket:
 
 ## Get it up and running
 
+### Environment Setup
+create your `.env` file with the following content
+```bash
+PUSHER_INSTANCE_ID='Your Key'
+PUSHER_SECRET_KEY='Your Key'
+SENDGRID_API_KEY='Your Key'
+```
+`PUSHER_INSTANCE_ID` & `PUSHER_SECRET_KEY` for push notification service through [Pusher Beams](https://pusher.com/beams "Pusher Beams")
+
+![image](https://user-images.githubusercontent.com/40784041/112734057-18207980-8f4c-11eb-8089-41ec8a632331.png)
+
+`SENDGRID_API_KEY` for mailing service through [Sendgrid](https://app.sendgrid.com/)
+
+![image](https://user-images.githubusercontent.com/40784041/112734187-d512d600-8f4c-11eb-90e1-02f71063f2ad.png)
+
+
 ### start up docker
 
 ```bash
@@ -114,4 +130,22 @@ $ curl --header \
         "Authentication: Bearer JWT_TOKEN" \
         --header "Content-Type: application/json" \
         http://localhost:3189/users
+```
+### Archive User
+##### (POST /users/:id/archive)
+
+```bash
+$ curl --header \
+        "Authentication: Bearer JWT_TOKEN" \
+        --header "Content-Type: application/json" \
+        http://localhost:3189/users/:id/archive
+```
+### Un-Archive User
+##### (POST /users/:id/unarchive)
+
+```bash
+$ curl --header \
+        "Authentication: Bearer JWT_TOKEN" \
+        --header "Content-Type: application/json" \
+        http://localhost:3189/users/:id/unarchive
 ```
